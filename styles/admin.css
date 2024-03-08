@@ -1,0 +1,249 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #333; /* Цвет фона заголовка */
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444; /* Цвет фона навигации */
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h2 {
+    text-align: center;
+    color: black;
+}
+
+.admin-table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+.admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.admin-table td {
+    color: black;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.edit-link, .delete-link {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.edit-link:hover, .delete-link:hover {
+    background-color: #333;
+}
+
+/* Стиль для успешного сообщения */
+.success-message {
+    background-color: #4CAF50; /* Зеленый цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 15px; /* Внутренний отступ */
+    border-radius: 5px; /* Скругление углов */
+    margin-top: 10px; /* Верхний отступ */
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Стиль для сообщения об ошибке */
+.error-message {
+    background-color: #f44336; /* Красный цвет фона */
+    color: #fff; /* Белый цвет текста */
+    padding: 15px; /* Внутренний отступ */
+    border-radius: 5px; /* Скругление углов */
+    margin-top: 10px; /* Верхний отступ */
+    text-align: center; /* Выравнивание по центру */
+}
+
+.admin-panel {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.admin-table {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-column {
+    width: 48%; /* Распределение пространства между столбцами */
+}
+
+.admin-row {
+    margin: 10px 0;
+}
+
+.admin-row a {
+    display: block;
+    padding: 10px;
+    background-color: #1a1a1a;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.admin-row a:hover {
+    background-color: #333;
+}
+
+.admin-form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 600px; /* Уменьшена максимальная ширина формы */
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.admin-form h2 {
+    text-align: center;
+    color: #333;
+}
+
+.admin-form label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333;
+    text-align: left; /* Выравнивание по левому краю */
+}
+
+.admin-form input,
+.admin-form button,
+.admin-form select {
+    width: calc(100% - 20px); /* Уменьшена ширина элементов на 20px для компенсации отступов */
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.admin-form button {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.admin-form button:hover {
+    background-color: #555;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+ /* Additional style for search box */
+ .search-box {
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 8px;
+    width: 70%;
+    box-sizing: border-box;
+}
+
+.search-button {
+    padding: 8px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-form {
+    text-align: center;
+    margin: 20px 0; /* Увеличьте отступ для лучшего визуального разделения */
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 5px;
+    box-sizing: border-box;
+    width: 60%; /* Ширина текстового поля поиска */
+}
+
+.search-form button {
+    padding: 10px 15px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #555;
+}
+
+#logo {
+    text-decoration: none; /* Убираем подчеркивание для ссылки */
+    color: #ffffff; /* Задаем цвет текста */
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    align-items: center; /* Выравниваем элементы по вертикали */
+}
+
+#site-icon img {
+    width: 100px; /* Задаем фиксированную ширину для иконки */
+    height: 100px; /* Задаем фиксированную высоту для иконки */
+}

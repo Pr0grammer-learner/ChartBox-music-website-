@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css?family=Bree+Serif");
+body {
+  font-family: "Bree Serif", serif;
+  color: #ffffff;
+}
+
+.container {
+  align-content: center;
+  display: flex;
+  margin: 140px auto;
+  width: 400px;
+  height: 500px;
+  background: #1a8093;
+  border-radius: 20px;
+}
+
+.login {
+  font-size: 24px;
+  cursor: pointer;
+  padding-top: 10px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  margin-top: -20px;
+  width: 200px;
+  height: 70px;
+  background: #1a8093;
+  border-top-right-radius: 15px;
+  box-shadow: 2px black;
+  transition: margin 0.5s, border-top-right-radius 0.8s, border-bottom-right-radius 0.8s;
+}
+
+.singin {
+  font-size: 24px;
+  cursor: pointer;
+  padding-top: 10px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  margin: 0 200px;
+  width: 200px;
+  height: 50px;
+  background: #ea534d;
+  border-bottom-left-radius: 15px;
+  transition: margin 0.5s, border-top-left-radius 0.8s, border-bottom-left-radius 0.8s;
+}
+
+.button .login {
+  margin: 0;
+  background: #ea534d;
+  height: 50px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 15px;
+  transition: margin 0.5s, border-top-right-radius 0.8s, border-bottom-right-radius 0.8s;
+}
+
+.button .singin {
+  font-size: 24px;
+  cursor: pointer;
+  padding-top: 10px;
+  text-align: center;
+  display: block;
+  position: absolute;
+  margin: -20px 200px;
+  width: 200px;
+  height: 70px;
+  background: #1a8093;
+  border-top-left-radius: 15px;
+  transition: margin 0.5s, border-top-left-radius 0.8s, border-bottom-left-radius 0.8s;
+}
+
+.login-enter {
+  position: absolute;
+  margin: 100px 50px;
+  width: 300px;
+  height: 35px;
+  background: #ffffff;
+  z-index: 1;
+  color: #1a8093;
+  font-size: 20px;
+  text-align: center;
+}
+
+.mail-enter {
+  position: absolute;
+  margin: 160px 50px;
+  width: 300px;
+  height: 35px;
+  background: #ffffff;
+  z-index: 1;
+  color: #1a8093;
+  font-size: 20px;
+  text-align: center;
+}
+
+.password-enter {
+  position: absolute;
+  margin: 220px 50px;
+  width: 300px;
+  height: 35px;
+  background: #ffffff;
+  color: #1a8093;
+  z-index: 1;
+  font-size: 20px;
+  text-align: center;
+}
+
+.second-password {
+  position: absolute;
+  margin: 280px 50px;
+  width: 300px;
+  height: 35px;
+  background: #ffffff;
+  z-index: 1;
+  color: #1a8093;
+  font-size: 20px;
+  text-align: center;
+}
+
+input[type=text]::-webkit-input-placeholder {
+  text-align: center;
+  color: #1a8093;
+  font-size: 18px;
+  opacity: 0.5;
+}
+
+input[type=password]::-webkit-input-placeholder {
+  text-align: center;
+  color: #1a8093;
+  font-size: 18px;
+  opacity: 0.5;
+}
+
+.submit-reg {
+  position: absolute;
+  margin: 400px 50px;
+  width: 300px;
+  height: 50px;
+  background: #196776;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+}
+
+.submit-reg:active {
+  opacity: 0.5;
+}
+
+.submit-enter {
+  display: none;
+}
+
+.check-conditions {
+  position: absolute;
+  display: block;
+  margin: 340px 50px;
+  width: 20px;
+  height: 50px;
+  background: #196776;
+  z-index: 1;
+}
+
+.agree {
+  text-align: center;
+  font-weight: bold;
+  font-family: Arial;
+  position: absolute;
+  margin: 350px 80px;
+  color: #49a5b6;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.button .login-enter {
+  margin: 100px 50px;
+}
+
+.button .mail-enter {
+  display: none;
+}
+
+.button .password-enter {
+  margin: 220px 50px;
+}
+
+.button .second-password {
+  display: none;
+}
+
+.button .check-conditions {
+  display: none;
+}
+
+.button .agree {
+  display: none;
+}
+
+.button .submit-reg {
+  opacity: 0;
+}
+
+.button .submit-enter {
+  display: block;
+  position: absolute;
+  margin: 300px 50px;
+  width: 300px;
+  height: 50px;
+  background: #196776;
+  z-index: 1;
+  color: #ffffff;
+  font-size: 20px;
+  text-align: center;
+  border: none;
+}
+
+.button .submit-enter:active {
+  opacity: 0.5;
+}
+
+.password-tooltip {
+    position: relative;
+}
+
+.password-tooltip input {
+    width: 100%;
+    padding: 10px; /* Увеличил отступы для более комфортного вида */
+}
+
+.tooltip-text {
+    visibility: hidden;
+    width: 250px;
+    background-color: #1a8093;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 100%; /* Отступ сверху относительно родительского элемента (input) */
+    left: 50%;
+    margin-left: -125px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.password-tooltip:hover .tooltip-text,
+.password-tooltip input:focus + .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}

@@ -1,0 +1,305 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+header {
+    background-color: #0047ab;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    text-emphasis: center;
+}
+
+nav {
+    background-color: #1c2a4a;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+main {
+    padding: 20px;
+}
+
+#logo {
+    text-decoration: none; /* Убираем подчеркивание для ссылки */
+    color: #ffffff; /* Задаем цвет текста */
+    display: flex; /* Используем flexbox для выравнивания элементов */
+    align-items: center; /* Выравниваем элементы по вертикали */
+}
+
+#site-icon img {
+    width: 100px; /* Задаем фиксированную ширину для иконки */
+    height: 100px; /* Задаем фиксированную высоту для иконки */
+}
+
+.track-card {
+    position: relative;
+    border: 2px solid #ff4081;
+    background-color: #333;
+    padding: 15px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.track-card:hover {
+    box-shadow: 0 0 15px rgba(255, 64, 129, 0.7);
+}
+
+.track-card .cover-container {
+    position: relative;
+}
+
+.track-card img {
+    width: 100px;
+    height: 100px;
+    margin-right: 15px;
+    transition: filter 0.3s ease-in-out;
+}
+
+.track-card:hover img {
+    filter: brightness(70%);
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.track-card:hover .play-button {
+    display: flex;
+}
+
+.track-details {
+    flex-grow: 1;
+}
+
+.track-details h3 {
+    margin: 0;
+}
+
+.transparent-text {
+    opacity: 0.7;
+}
+
+.duration {
+    margin-left: auto;
+}
+
+/* Дополнительные стили для плеера */
+#audio-player {
+    display: none; /* По умолчанию аудиоплеер скрыт */
+}
+
+#player-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(28, 42, 74, 0.8);
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    visibility: hidden;
+}
+
+#track-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 5px;
+    width: 200px; /* Указывайте нужную ширину */
+}
+
+#track-info img {
+    max-width: 50px;
+    border-radius: 5px;
+    align-self: flex-start; /* Выравнивание по верхней границе */
+}
+
+#track-info .details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выравнивание по верхней границе */
+    padding: 5px;
+    flex-grow: 1; /* Добавляем flex-grow, чтобы текст не влиял на расположение кнопки */
+}
+
+#track-info .details h4 {
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#track-info .details p {
+    margin: 0;
+    align-self: flex-start; /* Выравнивание по нижней границе */
+}
+
+#add-remove-button {
+    align-self: flex-start; /* Выравнивание по верхней границе */
+    margin-top: 8px; /* Добавим отступ сверху */
+    background: none; /* Убираем фон */
+    border: none; /* Убираем границу */
+    padding: 0; /* Убираем отступы внутри кнопки */
+    cursor: pointer; /* Делаем курсор указателем */
+    display: inline-block; /* Делаем блочным элементом, чтобы можно было задать ширину и высоту */
+}
+
+#add-remove-button img {
+    width: 30px; /* Задаем ширину изображения */
+    height: 30px; /* Задаем высоту изображения */
+    object-fit: cover; /* Растягиваем изображение на всю кнопку */
+}
+
+#progress-container {
+    display: flex;
+    flex-direction: row; /* Исправлено: изменил направление flex на row */
+    align-items: center;
+    position: relative;
+}
+
+#progress-container::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: var(--progress);
+    background-color: rgba(198, 30, 201, 0.3); /* Цвет подсветки */
+    pointer-events: none; /* Чтобы не блокировать события мыши */
+    transition: width 0.1s ease; /* Плавное изменение ширины */
+}
+
+#progress-bar {
+    order: 2; /* Помещаем прогресс бар в середину */
+    position: relative; /* Добавляем относительное позиционирование для кружка */
+}
+
+#progress-container:hover #time-left,
+#progress-container:hover #time-right {
+    visibility: visible;
+}
+
+#time-left,
+#time-right {
+    font-size: 12px;
+    visibility: hidden;
+}
+
+#time-left{
+    order: 1;
+    padding-right: 5px;
+}
+
+#time-right{
+    order: 3;
+    padding-left: 5px;
+}
+
+#center-controls{
+    text-align-last: center;
+}
+
+#prev-icon,
+#play-pause-button,
+#next-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#prev-icon:hover,
+#play-pause-button:hover,
+#next-icon:hover {
+    filter: brightness(1.2);
+}
+
+#volume-button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+#volume-icon,
+#mute-icon {
+    width: 24px;
+    height: 24px;
+}
+
+#volume-container{
+    display: flex;
+}
+
+form {
+    display: flex;
+    margin-bottom: 20px; /* Расстояние между формой и h2 */
+    justify-content: center;
+}
+
+#search {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 8px 16px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    background-color: #45a049;
+}
+
+#search-h2 {
+    margin-bottom: 20px; /* Расстояние между h2 и карточками треков */
+    text-align: center;
+}
+
+#search-label {
+    margin-bottom:auto;
+    margin-top: auto;
+    margin-right: 10px;
+}
+
+#icon-button-play {
+    width: 30px;
+    height: 30px; 
+    margin: auto;
+}

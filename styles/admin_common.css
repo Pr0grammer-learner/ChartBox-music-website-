@@ -1,0 +1,44 @@
+/* Общие стили для админской панели */
+.admin-panel {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+    z-index: 1; /* Устанавливаем нижний z-index для блока списка треков */
+    text-align: center;
+}
+
+.admin-panel h2 {
+    text-align: center;
+    color: #333;
+}
+
+.admin-table {
+    width: 100%; /* Расширяем таблицу на всю ширину блока */
+    border-collapse: collapse;
+    margin-top: 20px; /* Добавляем отступ сверху для лучшего визуального разделения */
+}
+
+.admin-table th, .admin-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.admin-table th {
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+.admin-table td {
+    color: black;
+}
+
+.admin-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
